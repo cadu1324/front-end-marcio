@@ -1,50 +1,115 @@
-# React + TypeScript + Vite
+# Rick and Morty Characters
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto consiste em um frontend React para exibição de personagens da série Rick and Morty, juntamente com uma API backend.
 
-Currently, two official plugins are available:
+## Visão Geral
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+O frontend React foi desenvolvido para consumir dados da API, permitindo aos usuários visualizar informações sobre os personagens, incluindo nome, imagem, status e localização. A API backend fornece os dados necessários para o funcionamento do frontend.
 
-## Expanding the ESLint configuration
+## Tecnologias Utilizadas
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Frontend:** React, Tailwind CSS
+- **Backend:** Node.js, Express, TypeScript
+- **Banco de Dados:** PostgreSQL
 
-- Configure the top-level `parserOptions` property like this:
+## Executando o Projeto
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+Para executar este projeto, você precisará clonar ambos os repositórios (frontend e backend) e seguir as instruções abaixo:
+
+### Backend
+
+1. Clone o repositório da API:
+
+```bash
+git clone https://github.com/cadu1324/teste-desenvolvimento-back-end.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. Acesse o diretório da API:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+cd teste-desenvolvimento-back-end
 ```
+
+3. Instale as dependências:
+
+```bash
+npm install
+```
+
+4. Configure o banco de dados:
+   - Certifique-se de ter o PostgreSQL instalado e em execução.
+   - Crie um banco de dados com o nome de sua preferência.
+   - Configure as variáveis de ambiente no arquivo `.env` com as informações de conexão do seu banco de dados.
+
+5. Crie a tabela `user` com a seguinte estrutura:
+
+```sql
+CREATE TABLE "user" (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  email VARCHAR(255) UNIQUE NOT NULL,
+  password VARCHAR(255) NOT NULL
+);
+```
+
+6. Inicie a API:
+
+```bash
+npm run dev
+```
+
+### Frontend
+
+1. Clone o repositório do frontend:
+
+```bash
+git clone https://github.com/cadu1324/teste-desenvolvimento-front-end.git
+```
+
+2. Acesse o diretório do frontend:
+
+```bash
+cd teste-desenvolvimento-front-end
+```
+
+3. Instale as dependências:
+
+```bash
+npm install
+```
+
+4. Configure as variáveis de ambiente:
+   - Crie um arquivo `.env` na raiz do projeto e adicione a URL da API backend:
+
+```bash
+REACT_APP_API_URL=http://localhost:4002
+```
+
+5. Inicie o frontend:
+
+```bash
+npm start
+```
+
+## Observações
+
+- Certifique-se de que a API backend esteja em execução antes de iniciar o frontend.
+- O frontend irá consumir os dados da API e exibir os personagens na tela.
+- Este projeto foi desenvolvido com fins didáticos e pode não estar pronto para produção.
+
+## Contribuição
+
+Contribuições são sempre bem-vindas! Sinta-se à vontade para abrir issues e enviar pull requests.
+
+## Licença
+
+Este projeto está sob a licença MIT.
+
+## Autor
+
+Seu Nome
+
+## Link para a Aplicação Web
+
+[https://cadu1324.github.io/teste-desenvolvimento-front-end](https://cadu1324.github.io/teste-desenvolvimento-front-end)
+
