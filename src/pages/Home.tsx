@@ -42,10 +42,12 @@ const Home: React.FC = () => {
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
   };
-
+  
+  const user = localStorage.getItem('name');
+  
   return (
     <div className="home-container">
-      <Header userName="Nome do Usuário" />
+      <Header userName={user || ''} />
       <div className="home-content">
         <h1 className="home-title">Rick and Morty Characters</h1>
         {loading ? (
