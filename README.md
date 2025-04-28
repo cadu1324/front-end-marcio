@@ -44,6 +44,10 @@ npm start
 
 - Este projeto foi desenvolvido com fins didáticos.
 
+## Vizualização da Aplicação
+
+- <img src="/gif_projeto_marcio.gif">
+
 ## Contribuição
 
 Contribuições são sempre bem-vindas! Sinta-se à vontade para abrir issues e enviar pull requests.
