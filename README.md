@@ -107,7 +107,7 @@ Este projeto está sob a licença MIT.
 
 ## Autor
 
-Seu Nome
+Carlos Eduardo Silva de Oliveira 
 
 ## Link para a Aplicação Web
 
