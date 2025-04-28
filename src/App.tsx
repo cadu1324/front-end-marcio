@@ -21,7 +21,7 @@ const App: React.FC = () => {
           {/*<Route path="/" element={<Login />} />*/}
           {/*<Route path="/register" element={<Register />} />*/}
           {/*<Route path="/home" element={<PrivateRoute><Home /></PrivateRoute>} /> TIVE QUE REMOVER POIS N GERA TOKEN SEM LOGIN*/}
-          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Home />} />
         </Routes>
       </Router>
     </div>
